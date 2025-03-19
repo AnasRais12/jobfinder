@@ -7,10 +7,9 @@
   --breakpoint-custom-max: 1400px;
   --breakpoint-custom-mak: 1405px;
   --breakpoint-small: 300px;
-
 }
 
-body{
+body {
   font-family: 'Inter', sans-serif;
   font-weight: 500; /* Adjust weight as needed */
 }

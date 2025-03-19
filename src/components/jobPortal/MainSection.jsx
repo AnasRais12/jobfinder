@@ -42,9 +42,8 @@ const MainSection = () => {
       </div>
       {/* Filter */}
 
-      <div className='flex  mt-4 overflow-x-auto  items-center border-b-2 border-[#e9ecef] gap-2 pb-4'>
-
-        <h1 className='text-[20px] text-[#737a91] mt-0 '>Similar:</h1>
+      <div className="flex  mt-4 overflow-x-auto  items-center border-b-2 border-[#e9ecef] gap-2 pb-4">
+        <h1 className="text-[20px] text-[#737a91] mt-0 ">Similar:</h1>
         <div className=" flex px-2 sm:gap-2 gap-3   ">
           <button className="border-[#737a91] border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
             Frontend
@@ -52,8 +51,10 @@ const MainSection = () => {
           <button className="border-[#737a91] border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
             Backend
           </button>
-          <button className="border-[#737A91]
-           border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
+          <button
+            className="border-[#737A91]
+           border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md"
+          >
             Graphic Designer
           </button>
         </div>
@@ -63,7 +64,9 @@ const MainSection = () => {
       <div className="mt-6">
         <h2 className="text-xl font-normal flex sm:flex-row flex-col sm:items-center gap-1 sm:gap-4">
           Featured Jobs{' '}
-          <span className="text-blue-600 border-b-2 w-fit text-[14px] sm:text-[16px]">See Featured Jobs</span>
+          <span className="text-blue-600 border-b-2 w-fit text-[14px] sm:text-[16px]">
+            See Featured Jobs
+          </span>
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
           {[...Array(4)].map((_, i) => (
@@ -99,9 +102,11 @@ const MainSection = () => {
 
       {/* Recommended Jobs */}
       <div className="mt-6">
-      <h2 className="text-xl font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
-      Recommended Jobs{' '}
-          <span className="text-blue-600 border-b-2 w-fit text-[14px] sm:text-[16px]">See Recommended Jobs</span>
+        <h2 className="text-xl font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
+          Recommended Jobs{' '}
+          <span className="text-blue-600 border-b-2 w-fit text-[14px] sm:text-[16px]">
+            See Recommended Jobs
+          </span>
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
           {[...Array(4)].map((_, i) => (

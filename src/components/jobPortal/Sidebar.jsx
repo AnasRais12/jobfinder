@@ -8,6 +8,12 @@ const Sidebar = () => {
 
   return (
     <>
+      {sidebarOpen && (
+    <div
+      className="fixed lg:hidden inset-0 bg-black opacity-50 z-40"
+      onClick={() => setSidebarOpen(false)}
+    ></div>
+  )}
       <button
           className="lg:hidden text-[25px] sm:text-[28px] text-[#0154AA] flex justify-end w-fit md:ml-[-4px] ml-[-8px] absolute left-0   bg-white px-6 py-1 rounded   "
           onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -19,7 +25,7 @@ const Sidebar = () => {
               lg:block fixed lg:relative top-0  left-0 h-screen     border-t-2 border-[#e9ecef] lg:border-t-0   lg:h-auto transition-transform 
               ${
                 sidebarOpen
-                  ? 'translate-x-0 mt-16 z-50 bg-gray-50   overflow-y-auto  w-full sm:w-[50%] md:w-[40%] px-4 rounded-sm py-4'
+                  ? 'translate-x-0 mt-16 z-50 bg-gray-50   overflow-y-auto  w-full sm:w-[55%] md:w-[50%] px-4 rounded-sm py-4 duration-700'
                   : '-translate-x-full '
               } lg:translate-x-0 `}
             >

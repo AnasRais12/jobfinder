@@ -87,19 +87,20 @@ export default function Navbar() {
             <motion.button
               className="min-xl:hidden block"
               onClick={() => setIsOpen(!isOpen)}
-              initial={{ rotate: 0 }}
-              animate={{ rotate: isOpen ? 360 : 0 }}
+              initial={{ scale: 1 }}
+              animate={{ scale: isOpen ? 1.2 : 1 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
               <motion.div
-                initial={{ opacity: 1, rotate: 0 }}
+                initial={{ opacity: 0.5, rotate: 0 }}
                 animate={{
                   opacity: 1,
-                  rotate: isOpen ? 360 : 0,
+                  rotate: isOpen ? 180 : 0,
+                  scale: isOpen ? 1.1 : 1,
                 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
               >
-                {isOpen ? <AiOutlineClose size={28} /> : <FiMenu size={30} />}
+                {isOpen ? <AiOutlineClose size={25} /> : <FiMenu size={30} />}
               </motion.div>
             </motion.button>
           </div>
