@@ -52,7 +52,8 @@ const MainSection = () => {
           <button className="border-[#737a91] border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
             Backend
           </button>
-          <button className="border-[#737a91] border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
+          <button className="border-[#737A91]
+           border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
             Graphic Designer
           </button>
         </div>
@@ -121,9 +122,14 @@ const MainSection = () => {
                   </a>
                 </span>
               </div>
-              <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded w-full">
-                Apply Now
-              </button>
+              <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
+                <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded lg:w-[80%] w-fit">
+                  Apply Now
+                </button>
+                <p className="py-2 text-[20px]">
+                  <FaRegBookmark />
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <>
       <button
-          className="lg:hidden text-[25px] sm:text-[28px] text-[#0154AA] flex justify-end w-fit ml-[-10px] absolute left-0   bg-white px-6 py-1 rounded   "
+          className="lg:hidden text-[25px] sm:text-[28px] text-[#0154AA] flex justify-end w-fit md:ml-[-4px] ml-[-8px] absolute left-0   bg-white px-6 py-1 rounded   "
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
           <RiMenu2Line />
@@ -19,13 +19,13 @@ const Sidebar = () => {
               lg:block fixed lg:relative top-0  left-0 h-screen     border-t-2 border-[#e9ecef] lg:border-t-0   lg:h-auto transition-transform 
               ${
                 sidebarOpen
-                  ? 'translate-x-0 mt-16 z-50 bg-white   overflow-y-auto  w-full sm:w-[50%] md:w-[40%] px-4 rounded-sm py-4'
-                  : '-translate-x-full'
+                  ? 'translate-x-0 mt-16 z-50 bg-gray-50   overflow-y-auto  w-full sm:w-[50%] md:w-[40%] px-4 rounded-sm py-4'
+                  : '-translate-x-full '
               } lg:translate-x-0 `}
             >
-                  <div className='flex justify-end items-center lg:hidden   mb-8'>
+                  <div className='flex justify-end items-center lg:hidden   mb-12 '>
                 <button
-          className="   text-[28px]  flex justify-end text-black absolute top-2 right-4 px-2 py-1 rounded   "
+          className="   text-[28px]  flex justify-end text-[#333333] hover:text-[red] absolute top-2 right-4 px-2 py-1 rounded   "
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
           <RxCross2 />
@@ -51,31 +51,31 @@ const Sidebar = () => {
                 </div>
     
                 {/* Profile Info */}
-                <div className="mt-4">
+                <div className="mt-4 flex flex-col justify-center items-center">
                   <h2 className="text-lg font-semibold">Albert Flores</h2>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-[16px] w-fit sm:w-[80%] text-center text-[#333333]">
                     Senior Product Designer | UI/UX Designer | Graphic Designer |
                     Web...
                   </p>
-                  <p className="text-xs text-gray-400 mt-1">Clinton, Maryland</p>
+                  <p className="text-sm text-gray-400 mt-1">Clinton, Maryland</p>
                 </div>
               </div>
-              <div className="mt-4 lg:bg-white bg-gray-50 space-y-3 px-2 rounded-md py-4">
-                <button className="flex justify-between text-gray-600 border-b-2 pb-2 border-[#E9ECEF] w-full">
+              <div className="mt-4 lg:bg-white bg-gray-50 space-y-3 text-[#333333]  px-3 rounded-md py-4">
+                <button className="flex justify-between border-b-2 pb-2 border-[#E9ECEF] w-full">
                   <p>Profile Visitors</p>{' '}
-                  <p className="text-blue-500">140</p>
+                  <p className="text-[#0154AA]">140</p>
                 </button>
-                <button className="flex justify-between text-gray-600 border-b-2 pb-2 border-[#E9ECEF] w-full">
+                <button className="flex justify-between border-b-2 pb-2 border-[#E9ECEF] w-full">
                   <p>Resume Viewers</p>{' '}
-                  <p className="text-blue-500">20</p>
+                  <p className="text-[#0154AA]">20</p>
                 </button>
-                <button className="flex justify-between text-gray-600 border-b-2 pb-2 border-[#E9ECEF] w-full">
-                  <p>My Jobs</p> <p className="text-blue-500">88</p>
+                <button className="flex justify-between  border-b-2 pb-2 border-[#E9ECEF] w-full">
+                  <p>My Jobs</p> <p className="text-[#0154AA]">88</p>
                 </button>
               </div>
-              <div className="mt-6 bg-white px-2 rounded-md py-2">
+              <div className="mt-6 lg:border-b-0 border-b-2 border-[#E9ECEF] lg:bg-white bg-gray-50 px-3 lg:rounded-md py-2">
                 <div className="flex justify-between items-end cursor-pointer">
-                  <span className="text-sm font-medium">My calendar</span>
+                  <span className="text-xl font-medium text-[#333333]">My calendar</span>
                   <FaChevronDown className="text-gray-500 text-sm" />
                 </div>
                 <p className="text-gray-500 text-sm">Upcoming Interviews</p>

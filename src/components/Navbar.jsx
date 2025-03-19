@@ -112,7 +112,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="min-xl:hidden block bg-gray-50 border-t-2 border-[#f0f0f0] shadow-md space-y-4 py-3 px-6 sm:px-8"
+            className="min-xl:hidden block bg-gray-50 border-t-2 border-[#f0f0f0] shadow-md space-y-4 py-3 pb-6 px-6 sm:px-8"
           >
             {navLink.map((item, idx) => (
               <motion.span
@@ -151,11 +151,11 @@ export default function Navbar() {
               transition: { duration: 0.7, ease: 'easeInOut' },
             }}
             transition={{ duration: 1, ease: 'anticipate' }} // Smooth animation
-            className="fixed top-0 md:hidden xl:block   inset-x-0 w-full flex justify-center  z-50 bg-opacity-50 bg-black  shadow-lg"
+            className="fixed top-0  sm:hidden xl:block    inset-x-0 w-full flex justify-center h-screen opacity-5  z-50  bg-[#504f4fa8] shadow-lg"
           >
             {/* Search Bar Section */}
             {/* Search Input */}
-            <div className="w-full  bg-white py-3">
+            <div className="w-full  bg-white h-fit py-3 xl:px-5">
               <div className="text-[22px] w-[100%]  px-4  flex mb-4 justify-between md:text-[25px] ">
                 <div className="text-[20px] md:text-[25px] font-bold text-orange-600">
                   <img className="h-10" src="/images/logo.svg" alt="Logo" />
