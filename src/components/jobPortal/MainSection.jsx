@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ProductFeature } from '../../utils/CardsData';
+import { ProductRecommanded } from '../../utils/CardsData';
 import {
   FaClock,
   FaMapMarkerAlt,
@@ -7,92 +9,114 @@ import {
 } from 'react-icons/fa';
 
 const MainSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  //  get category and save in state
+  const handleFilter = (category) => {
+    setSelectedCategory(category);
+  };
+
+  //  Filtered Jobs // and checking if selected category is All then show all jobs else show selected category jobs
+  const filteredFeatureProduct = ProductFeature(selectedCategory);
+
+  const filteredRecommandedProduct = ProductRecommanded(selectedCategory);
+
   return (
-    <div className="flex-1">
+    // Parent Section
+    <div className="flex-1 cursor-default">
       {/* Search Section */}
       <div className=" py-2 w-full lg:pt-0 pt-12  ">
         <h1 className="sm:text-2xl  text-[20px] text-[#333333] font-bold">
-          Find your Dream Job, <span className="text-blue-600">Albert!</span>
+          Find your Dream Job, <span className="text-[#0154AA]">Albert!</span>
         </h1>
         <p className="text-gray-500 text-sm ">
           Explore the latest job openings and apply for the best opportunities
           available today!
         </p>
 
-        <div className="mt-4 md:bg-white md:py-6 py-4 md:rounded-lg md:border-b-2 border-b-2  border-[#dae0e6] md:px-4 md:space-y-0 space-y-4 flex flex-col md:flex-row lg:gap-4">
+        <div className="mt-4 md:bg-white md:py-6 py-4 md:rounded-lg md:border-b-2 border-b-2  border-[#dae0e6] md:px-4 md:space-y-0 space-y-4 flex flex-col md:flex-row md:gap-2 lg:gap-4">
           <input
             type="text"
             placeholder="Job Title, Company, or Keywords"
-            className="p-2  w-full md:w-1/3 border-2 md:border-r-2 md:bg-inherit bg-white rounded-md border-[#ccc] md:border-[#e9ecef] md:border-b-0   focus:outline-blue-500"
+            className="p-2 lg:py-3  w-full md:w-1/3 border-2 md:border-r-2 md:bg-inherit rounded-md  bg-white border-[#ccc] md:border-[#e9ecef]    focus:outline-blue-500"
           />
-          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2  md:bg-inherit bg-white  md:border-b-0   w-full md:w-1/4">
-            <select className=" p-2  w-full  focus:outline-blue-500 ">
+          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2 rounded-md  md:bg-inherit bg-white     w-full md:w-1/4">
+            <select className=" p-2 lg:py-3  w-full  focus:outline-blue-500 ">
               <option>Select Location</option>
             </select>
           </div>
-          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2 md:border-b-0 md:bg-inherit bg-white     w-full md:w-1/4">
-            <select className=" p-2 rounded w-full focus:outline-blue-500 ">
+          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2  md:bg-inherit bg-white rounded-md      w-full md:w-1/4">
+            <select className=" p-2 lg:py-3 rounded w-full focus:outline-blue-500 ">
               <option>Job Type</option>
             </select>
           </div>
-          <button className="bg-blue-600 text-white  px-6 py-2.5 md:py-2 rounded md:w-fit w-full flex md:justify-start justify-center items-center gap-2">
-          <span className='md:block hidden'><FaSearch /></span>   Search
+          <button className="bg-[#0154AA] cursor-pointer text-white  px-6 py-2.5 md:py-2 rounded md:w-fit w-full flex md:justify-start justify-center items-center gap-2">
+            <span className="md:block hidden">
+              <FaSearch />
+            </span>{' '}
+            Search
           </button>
         </div>
       </div>
-      {/* Filter */}
 
-      <div className="flex  mt-4 overflow-x-auto  items-center border-b-2 border-[#e9ecef] gap-2 pb-4">
+      {/* Filter Buttons */}
+      <div className="flex  mt-4 overflow-x-auto  items-center border-b-2  border-[#e9ecef] gap-2 pb-4">
         <h1 className="text-[20px] text-[#737a91] mt-0 ">Similar:</h1>
-        <div className=" flex px-2 sm:gap-2 gap-3   ">
-          <button className="border-[#737a91] border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
-            Frontend
-          </button>
-          <button className="border-[#737a91] border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md">
-            Backend
-          </button>
-          <button
-            className="border-[#737A91]
-           border-2 sm:text-[16px] text-[13px] whitespace-nowrap text-[#737a91] px-4 py-2 rounded-md"
-          >
-            Graphic Designer
-          </button>
+        <div className=" flex px-2  sm:gap-2 gap-3   ">
+          {/* ✅ All button will only show when any category is selected */}
+          {selectedCategory !== 'All' && (
+            <button
+              onClick={() => handleFilter('All')}
+              className="border-2 sm:text-[16px] text-[13px] cursor-pointer px-4 py-2 rounded-md border-[#737a91] text-[#737a91]"
+            >
+              All
+            </button>
+          )}
+          {['Frontend', 'Backend', 'Graphic Designer'].map((category) => (
+            <button
+              key={category}
+              onClick={() => handleFilter(category)}
+              className={`  border-2 sm:text-[16px] text-[13px] whitespace-nowrap  px-4 py-2 rounded-md
+      ${selectedCategory === category ? 'bg-[#0154AA] text-white' : 'border-[#737a91] text-[#737a91]'}`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Featured Jobs */}
-      <div className="mt-6">
-        <h2 className="text-xl font-normal flex sm:flex-row flex-col sm:items-center gap-1 sm:gap-4">
+      <div className="mt-6 mb-20">
+        <h1 className="lg:text-2xl text-1xl font-normal flex sm:flex-row flex-col sm:items-center gap-1 sm:gap-4">
           Featured Jobs{' '}
-          <span className="text-blue-600 border-b-2 w-fit text-[14px] sm:text-[16px]">
+          <span className="text-[#0154AA] border-b-2 cursor-pointer  w-fit text-[14px] sm:text-[16px] lg:text-1xl">
             See Featured Jobs
           </span>
-        </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
-          {[...Array(4)].map((_, i) => (
+        </h1>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5  gap-4 mt-4">
+          {filteredFeatureProduct.map((featureItem, i) => (
             <div key={i} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold">UI/UX Designer</h3>
+              <h3 className="font-semibold">{featureItem?.title}</h3>
               <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
                 <FaMapMarkerAlt />
-                <span>Seattle, USA (Remote)</span>
+                <span>{featureItem?.location}</span>
               </div>
 
               {/* Time + Applicants */}
               <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
                 <FaClock />
                 <span>
-                  1 day ago |{' '}
-                  <a href="#" className="text-blue-600">
-                    22 applicants
+                  {featureItem?.postedTime} |
+                  <a href="#" className="text-[#0154AA] ml-2">
+                    {featureItem?.applicants} applicants
                   </a>
                 </span>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
-                <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded lg:w-[80%] w-fit">
+                <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
                   Apply Now
                 </button>
                 <p className="py-2 text-[20px]">
-                  <FaRegBookmark />
+                  <FaRegBookmark className="hover:text-[#0154AA]" />
                 </p>
               </div>
             </div>
@@ -102,37 +126,35 @@ const MainSection = () => {
 
       {/* Recommended Jobs */}
       <div className="mt-6">
-        <h2 className="text-xl font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
+        <h2 className="lg:text-2xl text-1xl  font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
           Recommended Jobs{' '}
-          <span className="text-blue-600 border-b-2 w-fit text-[14px] sm:text-[16px]">
+          <span className="text-[#0154AA] cursor-pointer  border-b-2 w-fit text-[14px] sm:text-[16px] lg:text-1xl">
             See Recommended Jobs
           </span>
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-          {[...Array(4)].map((_, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  3xl:grid-cols-5  gap-4 mt-4">
+          {filteredRecommandedProduct.map((itemRecommanded, i) => (
             <div key={i} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold">UI/UX Designer</h3>
+              <h3 className="font-semibold">{itemRecommanded?.title}</h3>
               <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
                 <FaMapMarkerAlt />
-                <span>Seattle, USA (Remote)</span>
+                <span>{itemRecommanded?.location}</span>
               </div>
 
               {/* Time + Applicants */}
               <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
                 <FaClock />
-                <span>
-                  1 day ago |{' '}
-                  <a href="#" className="text-blue-600">
-                    22 applicants
-                  </a>
-                </span>
+                {itemRecommanded?.postedTime} |
+                <a href="#" className="text-[#0154AA] ">
+                  {itemRecommanded?.applicants} applicants
+                </a>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
-                <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded lg:w-[80%] w-fit">
+                <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
                   Apply Now
                 </button>
-                <p className="py-2 text-[20px]">
-                  <FaRegBookmark />
+                <p className="py-2 hover:b text-[20px]">
+                  <FaRegBookmark className="hover:text-[#0154AA]" />
                 </p>
               </div>
             </div>
