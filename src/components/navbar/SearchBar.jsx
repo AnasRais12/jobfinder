@@ -19,7 +19,7 @@ export const SearchBar = ({ setSearchBar }) => {
       {/* Search Input */}
       <div className="w-full  bg-white h-fit py-3 xl:px-5">
         <div className="text-[22px] w-[100%]  px-4  flex mb-4 justify-between md:text-[25px] ">
-          <div className="text-[20px] md:text-[25px] font-bold text-orange-600">
+          <div className="text-[20px] md:text-[25px] font-bold ">
             <img className="h-10" src="/images/logo.svg" alt="Logo" />
           </div>
           <button

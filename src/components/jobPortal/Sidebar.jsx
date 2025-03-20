@@ -11,7 +11,8 @@ const Sidebar = () => {
     { title: 'My Jobs', count: 88 },
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isOpendropDown, setIsOpendropDown] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   return (
     <>
@@ -24,7 +25,7 @@ const Sidebar = () => {
       )}
       {/* Sidebar Responsive Button  */}
       <button
-        className="lg:hidden text-[25px] sm:text-[28px] text-[#0154AA] flex justify-end w-fit md:ml-[-4px] ml-[-8px] absolute left-0   bg-white px-6 py-1 rounded   "
+        className="lg:hidden text-[25px] sm:text-[28px] text-primary flex justify-end w-fit md:ml-[-4px] ml-[-8px] absolute left-0   bg-white px-6 py-1 rounded   "
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
         <RiMenu2Line />
@@ -40,79 +41,84 @@ const Sidebar = () => {
                   : 'sm:-translate-x-full -translate-x-[180%] '
               } lg:translate-x-0 `}
       >
-        <div className='lg:h-fit h-[75vh] sidebar  overflow-y-auto'>
-        <div className="flex justify-end  items-cente  lg:hidden   mb-4 ">
-          <button
-            className="   text-[28px]  flex justify-end text-[#333333] hover:text-[red] px-2 py-1 rounded   "
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-          >
-            <RxCross2 />
-          </button>
-        </div>
-
-        {/* Profile Section */}
-        <div className=" w-full pb-4    rounded-lg lg:bg-white text-center  ">
-          <div className="relative  w-full size-28 rounded-lg overflow-hidden">
-            <img
-              src="/images/cover.jpg"
-              alt="Background"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="relative -mt-10">
-            <img
-              src="/images/Oval.jpg"
-              alt="Profile"
-              className="size-24 rounded-full mx-auto "
-            />
-          </div>
-
-          {/* Profile Infomation */}
-          <div className="mt-4 flex flex-col justify-center items-center">
-            <h2 className="text-[22px]  md:text-2xl font-semibold">Albert Flores</h2>
-            <p className="text-[18px] sm:text-lg mb-1 w-fit sm:w-[80%]  lg:w-fit xl:w-[80%] text-center text-[#333333]">
-              Senior Product Designer | UI/UX Designer | Graphic Designer |
-              Web...
-            </p>
-            <p className=" text-[18px] sm:text-lg text-gray-400 mt-1">Clinton, Maryland</p>
-          </div>
-        </div>
-
-        {/*   Stats OverView */}
-        <div className="mt-4 lg:bg-white bg-gray-50 space-y-3 text-[#333333]  px-3 rounded-md py-4">
-          {StatsOverview.map((item, i) => (
+        <div className="lg:h-fit h-[75vh] sidebar  overflow-y-auto">
+          <div className="flex justify-end  items-cente  lg:hidden   mb-4 ">
             <button
-              key={i}
-              className="flex justify-between lg:border-b-0 border-b-2 pb-2 border-[#E9ECEF] cursor-pointer w-full"
+              className="   text-[28px]  flex justify-end text-secondary hover:text-[red] px-2 py-1 rounded   "
+              onClick={toggleSidebar}
             >
-              <p>{item.title}</p> <p className="text-[#0154AA]">{item.count}</p>
+              <RxCross2 />
             </button>
-          ))}
-        </div>
+          </div>
 
-        {/* Schedule  */}
-        <div>
+          {/* Profile Section */}
+          <div className=" w-full pb-4    rounded-lg lg:bg-white text-center  ">
+            {/* backgroundImage */}
+            <div className="relative  w-full size-28 rounded-lg overflow-hidden">
+              <img
+                src="/images/cover.jpg"
+                alt="Background"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* profile image */}
+            <div className="relative -mt-10">
+              <img
+                src="/images/Oval.jpg"
+                alt="Profile"
+                className="size-24 rounded-full mx-auto "
+              />
+            </div>
+
+            {/* Profile Infomation */}
+            <div className="mt-4 flex flex-col justify-center items-center">
+              <h2 className="text-[22px]  md:text-2xl font-semibold">
+                Albert Flores
+              </h2>
+              <p className="text-[18px] sm:text-lg mb-1 w-fit sm:w-[80%]  lg:w-fit xl:w-[80%] text-center text-secondary">
+                Senior Product Designer | UI/UX Designer | Graphic Designer |
+                Web...
+              </p>
+              <p className=" text-[18px] sm:text-lg text-gray-400 mt-1">
+                Clinton, Maryland
+              </p>
+            </div>
+          </div>
+
+          {/*   Stats OverView */}
+          <div className="mt-4 lg:bg-white bg-gray-50 space-y-3 text-secondary  px-3 rounded-md py-4">
+            {StatsOverview.map((item, i) => (
+              <button
+                key={i}
+                className="flex justify-between lg:border-b-0 border-b-2 pb-2 border-[#E9ECEF] cursor-pointer w-full"
+              >
+                <p>{item.title}</p> <p className="text-primary">{item.count}</p>
+              </button>
+            ))}
+          </div>
+
+          {/* Schedule  */}
           <div className="mt-6 lg:border-b-0 border-b-2 border-[#E9ECEF] lg:bg-white bg-gray-50 px-3 lg:rounded-md py-2">
             <div className="flex justify-between items-end ">
-              <p className="text-lg font-medium text-[#333333] ">My calendar</p>
+              <p className="text-lg font-medium text-secondary ">My calendar</p>
               <button
-                onClick={() => setIsOpendropDown(!isOpendropDown)}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="text-gray-500 text-sm cursor-pointer"
               >
-                {isOpendropDown ? <FaChevronUp /> : <FaChevronDown />}
+                {isDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
               </button>
             </div>
             <p className="text-gray-500 text-sm">Upcoming Interviews</p>
           </div>
-          {isOpendropDown && (
+
+          {/* DropDown Interview Schedule */}
+          {isDropdownOpen && (
             <div className="mt-1 duration-300 transition-all bg-white shadow-md rounded-md p-3 border border-gray-200">
               <p className="text-sm text-gray-700">
                 No interviews scheduled yet.
               </p>
             </div>
           )}
-        </div>
         </div>
       </div>
     </>

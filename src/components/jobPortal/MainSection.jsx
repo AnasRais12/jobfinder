@@ -10,8 +10,9 @@ import {
 
 const MainSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  //  get category and save in state
+
   const handleFilter = (category) => {
+    //  get category and save in state
     setSelectedCategory(category);
   };
 
@@ -25,8 +26,8 @@ const MainSection = () => {
     <div className="flex-1 cursor-default">
       {/* Search Section */}
       <div className=" py-2 w-full lg:pt-0 pt-12  ">
-        <h1 className="sm:text-2xl  text-[20px] text-[#333333] font-bold">
-          Find your Dream Job, <span className="text-[#0154AA]">Albert!</span>
+        <h1 className="sm:text-2xl  text-[20px] text-secondary font-bold">
+          Find your Dream Job, <span className="text-primary">Albert!</span>
         </h1>
         <p className="text-gray-500 text-sm ">
           Explore the latest job openings and apply for the best opportunities
@@ -43,14 +44,12 @@ const MainSection = () => {
             <select className=" p-2 lg:py-3  w-full text-gray-400 focus:outline-none   ">
               <option defaultValue={''}>Select Location</option>
               <option>Location 1</option>
-
             </select>
           </div>
           <div className="border-[#ccc] md:border-[#e9ecef] md:rounded-none rounded-md  md:border-0 md:border-r-2 pr-2 border-2  md:bg-inherit bg-white w-full md:w-1/4">
             <select className=" p-2 lg:py-3 text-gray-400  rounded w-full focus:outline-none ">
               <option>Job Type</option>
               <option>Job Type1</option>
-
             </select>
           </div>
           <button className="bg-[#0154AA] cursor-pointer text-white  px-6 py-2.5 md:py-2 rounded md:w-fit w-full flex md:justify-start justify-center items-center gap-2">
@@ -88,11 +87,11 @@ const MainSection = () => {
         </div>
       </div>
 
-      {/* Featured Jobs */}
+      {/* Featured Jobs Section */}
       <div className="mt-6 mb-20">
         <h1 className="sm:text-2xl text-[22px] font-normal flex sm:flex-row flex-col sm:items-center gap-1 sm:gap-4">
           Featured Jobs{' '}
-          <span className="text-[#0154AA] border-b-2 cursor-pointer  w-fit text-[14px] sm:text-[16px] lg:text-1xl">
+          <span className="text-primary border-b-2 cursor-pointer  w-fit text-[14px] sm:text-[16px] lg:text-1xl">
             See Featured Jobs
           </span>
         </h1>
@@ -105,22 +104,21 @@ const MainSection = () => {
                 <span>{featureItem?.location}</span>
               </div>
 
-              {/* Time + Applicants */}
               <div className="flex items-center flex-wrap gap-2 text-gray-500 text-sm mt-2">
-                <div className='flex items-center gap-2'>
-                <FaClock />
+                <div className="flex items-center gap-2">
+                  <FaClock />
                   {featureItem?.postedTime} |
                 </div>
-                <p className="text-[#0154AA] ml-2">
-                    {featureItem?.applicants} applicants
-                  </p>
+                <p className="text-primary ml-2">
+                  {featureItem?.applicants} applicants
+                </p>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
                 <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
                   Apply Now
                 </button>
                 <p className="py-2 text-[20px]">
-                  <FaRegBookmark className="hover:text-[#0154AA]" />
+                  <FaRegBookmark className="hover:text-primary" />
                 </p>
               </div>
             </div>
@@ -128,11 +126,11 @@ const MainSection = () => {
         </div>
       </div>
 
-      {/* Recommended Jobs */}
+      {/* Recommended Jobs Section */}
       <div className="mt-6">
         <h2 className="sm:text-2xl text-[22px]  font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
           Recommended Jobs{' '}
-          <span className="text-[#0154AA] cursor-pointer  border-b-2 w-fit text-[15px] sm:text-[17px] lg:text-1xl">
+          <span className="text-primary cursor-pointer  border-b-2 w-fit text-[15px] sm:text-[17px] lg:text-1xl">
             See Recommended Jobs
           </span>
         </h2>
@@ -140,27 +138,27 @@ const MainSection = () => {
           {filteredRecommandedProduct.map((itemRecommanded, i) => (
             <div key={i} className="bg-white p-4 rounded-lg shadow-md">
               <h3 className="font-semibold">{itemRecommanded?.title}</h3>
+
               <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
                 <FaMapMarkerAlt />
                 <span>{itemRecommanded?.location}</span>
               </div>
 
-              {/* Time + Applicants */}
               <div className="flex items-center flex-wrap gap-2 text-gray-500 text-sm mt-2">
-                <div className='flex items-center gap-2'>
-                <FaClock />
+                <div className="flex items-center gap-2">
+                  <FaClock />
                   {itemRecommanded?.postedTime} |
                 </div>
-                <p className="text-[#0154AA] ml-2">
-                    {itemRecommanded?.applicants} applicants
-                  </p>
+                <p className="text-primary ml-2">
+                  {itemRecommanded?.applicants} applicants
+                </p>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
                 <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
                   Apply Now
                 </button>
                 <p className="py-2 hover:b text-[20px]">
-                  <FaRegBookmark className="hover:text-[#0154AA]" />
+                  <FaRegBookmark className="hover:text-primary" />
                 </p>
               </div>
             </div>

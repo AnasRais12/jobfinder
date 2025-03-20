@@ -5,8 +5,9 @@ import { SearchBar } from './SearchBar';
 import { MobileMenu } from './MobileMenu';
 import { motion } from 'framer-motion';
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchBar, setSearchBar] = useState(false);
+  const toggleMenuBar = () => setIsMenuOpen(!isMenuOpen);
 
   const navLink = [
     'Find Jobs',
@@ -34,7 +35,7 @@ export default function Navbar() {
               {navLink.map((item, idx) => (
                 <span
                   key={idx}
-                  className={`hover:text-blue-600 ${item === 'Find Jobs' ? 'text-[#0154AA] font-semibold' : 'text-[#737A91]'}`}
+                  className={`hover:text-primary ${item === 'Find Jobs' ? 'text-primary font-semibold' : 'text-[#737A91]'}`}
                 >
                   {item}
                 </span>
@@ -71,10 +72,10 @@ export default function Navbar() {
               onClick={() => setSearchBar(true)}
               className="min-2xl:hidden min-xl:block sm:hidden block "
             >
-              <FiSearch className="sm:text-[30px] text-[28px] text-gray-700 hover:text-orange-600" />
+              <FiSearch className="sm:text-[30px] text-[28px] text-secondary hover:text-orange-600" />
             </button>
 
-            <button className="bg-[#0154AA] cursor-pointer sm:block hidden text-white px-4 w-fit py-2 rounded-md text-[16px]">
+            <button className="bg-primary cursor-pointer sm:block hidden text-white px-4 w-fit py-2 rounded-md text-[16px]">
               Resume Builder
             </button>
 
@@ -83,31 +84,37 @@ export default function Navbar() {
               src="/images/profile.png"
               alt="Profile"
             />
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu animation Button */}
             <motion.button
               className="min-xl:hidden block"
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={toggleMenuBar}
               initial={{ scale: 1 }}
-              animate={{ scale: isOpen ? 1.2 : 1 }}
+              animate={{ scale: isMenuOpen ? 1.2 : 1 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
               <motion.div
                 initial={{ opacity: 0.5, rotate: 0 }}
                 animate={{
                   opacity: 1,
-                  rotate: isOpen ? 180 : 0,
-                  scale: isOpen ? 1.1 : 1,
+                  rotate: isMenuOpen ? 180 : 0,
+                  scale: isMenuOpen ? 1.1 : 1,
                 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
               >
-                {isOpen ? <AiOutlineClose size={25} /> : <FiMenu size={30} />}
+                {isMenuOpen ? (
+                  <AiOutlineClose size={25} />
+                ) : (
+                  <FiMenu size={30} />
+                )}
               </motion.div>
             </motion.button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && <MobileMenu setIsOpen={setIsOpen} navLink={navLink} />}
+        {/* Mobile Menu Bar */}
+        {isMenuOpen && (
+          <MobileMenu setIsMenuOpen={setIsMenuOpen} navLink={navLink} />
+        )}
       </nav>
       {/* SearchBar */}
       {searchBar && <SearchBar setSearchBar={setSearchBar} />}

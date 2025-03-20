@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-export const MobileMenu = ({ setIsOpen, navLink }) => {
+export const MobileMenu = ({ setIsMenuOpen, navLink }) => {
   return (
     <div className="fixed inset-0 top-16 z-50 flex justify-start">
       {/* Overlay */}
@@ -10,7 +10,7 @@ export const MobileMenu = ({ setIsOpen, navLink }) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
         className="absolute inset-0 bg-black/50"
-        onClick={() => setIsOpen(false)} // Click pe close hoga
+        onClick={() => setIsMenuOpen(false)} // Click pe close hoga
       />
 
       {/* Dropdown Menu (From Top) */}
@@ -28,10 +28,10 @@ export const MobileMenu = ({ setIsOpen, navLink }) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.05, duration: 0.3 }}
-            className={`block text-[18px] font-medium cursor-pointer hover:text-blue-600 ${
+            className={`block text-[18px] font-medium cursor-pointer hover:text-primary ${
               item === 'Find Jobs'
-                ? 'text-[#0154AA] font-semibold'
-                : 'text-gray-700'
+                ? 'text-primary font-semibold'
+                : 'text-secondary'
             }`}
           >
             {item}
@@ -43,7 +43,7 @@ export const MobileMenu = ({ setIsOpen, navLink }) => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.3 }}
-          className="w-full sm:hidden block text-center bg-[#0154AA] rounded-md py-2 text-white font-medium hover:bg-blue-700"
+          className="w-full sm:hidden block text-center bg-primary rounded-md py-2 text-white font-medium hover:bg-blue-700"
         >
           Resume Builder
         </motion.button>
