@@ -62,7 +62,7 @@ const MainSection = () => {
       <div className="flex  mt-4 overflow-x-auto  items-center border-b-2  border-[#e9ecef] gap-2 pb-4">
         <h1 className="text-[20px] text-[#737a91] mt-0 ">Similar:</h1>
         <div className=" flex px-2  sm:gap-2 gap-3   ">
-          {/* ✅ All button will only show when any category is selected */}
+          {/* All button will only show when any category is selected */}
           {selectedCategory !== 'All' && (
             <button
               onClick={() => handleFilter('All')}

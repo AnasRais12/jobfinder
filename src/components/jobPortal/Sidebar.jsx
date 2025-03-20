@@ -36,10 +36,11 @@ const Sidebar = () => {
               lg:block fixed lg:relative top-0  left-0 h-[100vh] cursor-default    border-t-2 border-[#e9ecef] lg:border-t-0   lg:h-auto transition-transform 
               ${
                 sidebarOpen
-                  ? 'translate-x-0 mt-16 z-50 bg-gray-50   overflow-y-auto  w-full sm:w-[55%] md:w-[50%] px-4 rounded-sm py-4 duration-700'
+                  ? 'translate-x-0 mt-16 z-50 bg-gray-50     w-full sm:w-[55%] md:w-[50%] px-4 rounded-sm py-4 duration-700'
                   : 'sm:-translate-x-full -translate-x-[180%] '
               } lg:translate-x-0 `}
       >
+        <div className='h-[75vh]  overflow-y-auto'>
         <div className="flex justify-end items-center lg:hidden   mb-12 ">
           <button
             className="   text-[28px]  flex justify-end text-[#333333] hover:text-[red] absolute top-2 right-4 px-2 py-1 rounded   "
@@ -111,6 +112,7 @@ const Sidebar = () => {
               </p>
             </div>
           )}
+        </div>
         </div>
       </div>
     </>
