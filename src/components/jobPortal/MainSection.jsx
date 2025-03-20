@@ -19,24 +19,24 @@ const MainSection = () => {
           available today!
         </p>
 
-        <div className="mt-4 md:bg-white md:py-6 py-4 md:rounded-lg  md:border-t-0 border-t-2 border-[#e9ecef] md:px-4 md:space-y-0 space-y-4 flex flex-col md:flex-row lg:gap-4">
+        <div className="mt-4 md:bg-white md:py-6 py-4 md:rounded-lg md:border-b-2 border-b-2  border-[#dae0e6] md:px-4 md:space-y-0 space-y-4 flex flex-col md:flex-row lg:gap-4">
           <input
             type="text"
             placeholder="Job Title, Company, or Keywords"
-            className="p-2  w-full md:w-1/3 border-b-2 md:border-r-2 md:bg-inherit bg-white rounded-md border-[#e9ecef] md:border-b-0   focus:outline-blue-500"
+            className="p-2  w-full md:w-1/3 border-2 md:border-r-2 md:bg-inherit bg-white rounded-md border-[#ccc] md:border-[#e9ecef] md:border-b-0   focus:outline-blue-500"
           />
-          <div className="border-[#e9ecef] border-b-2 md:border-r-2 pr-2  md:bg-inherit bg-white  md:border-b-0   w-full md:w-1/4">
+          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2  md:bg-inherit bg-white  md:border-b-0   w-full md:w-1/4">
             <select className=" p-2  w-full  focus:outline-blue-500 ">
               <option>Select Location</option>
             </select>
           </div>
-          <div className="border-[#e9ecef] border-b-2 md:border-r-2 pr-2 md:border-b-0 md:bg-inherit bg-white     w-full md:w-1/4">
+          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2 md:border-b-0 md:bg-inherit bg-white     w-full md:w-1/4">
             <select className=" p-2 rounded w-full focus:outline-blue-500 ">
               <option>Job Type</option>
             </select>
           </div>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded md:w-fit w-full flex items-center gap-2">
-            <FaSearch /> Search
+          <button className="bg-blue-600 text-white  px-6 py-2.5 md:py-2 rounded md:w-fit w-full flex md:justify-start justify-center items-center gap-2">
+          <span className='md:block hidden'><FaSearch /></span>   Search
           </button>
         </div>
       </div>
