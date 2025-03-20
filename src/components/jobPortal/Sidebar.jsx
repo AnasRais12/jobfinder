@@ -33,7 +33,7 @@ const Sidebar = () => {
       {/* SideBar Content */}
       <div
         className={` rounded-lg  w-1/4 
-              lg:block fixed lg:relative top-0  left-0 h-[90vh] cursor-default    border-t-2 border-[#e9ecef] lg:border-t-0   lg:h-auto transition-transform 
+              lg:block fixed lg:relative top-0  left-0 h-[100vh] cursor-default    border-t-2 border-[#e9ecef] lg:border-t-0   lg:h-auto transition-transform 
               ${
                 sidebarOpen
                   ? 'translate-x-0 mt-16 z-50 bg-gray-50   overflow-y-auto  w-full sm:w-[55%] md:w-[50%] px-4 rounded-sm py-4 duration-700'
