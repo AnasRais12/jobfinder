@@ -40,7 +40,7 @@ const Sidebar = () => {
                   : 'sm:-translate-x-full -translate-x-[180%] '
               } lg:translate-x-0 `}
       >
-        <div className='h-[75vh]  overflow-y-auto'>
+        <div className='lg:h-fit h-[75vh]  overflow-y-auto'>
         <div className="flex justify-end items-center lg:hidden   mb-12 ">
           <button
             className="   text-[28px]  flex justify-end text-[#333333] hover:text-[red] absolute top-2 right-4 px-2 py-1 rounded   "
@@ -70,12 +70,12 @@ const Sidebar = () => {
 
           {/* Profile Infomation */}
           <div className="mt-4 flex flex-col justify-center items-center">
-            <h2 className="text-lg font-semibold">Albert Flores</h2>
-            <p className="text-[16px] w-fit sm:w-[80%] text-center text-[#333333]">
+            <h2 className="text-[22px]  md:text-2xl font-semibold">Albert Flores</h2>
+            <p className="text-[18px] sm:text-lg mb-1 w-fit sm:w-[80%]  lg:w-fit xl:w-[80%] text-center text-[#333333]">
               Senior Product Designer | UI/UX Designer | Graphic Designer |
               Web...
             </p>
-            <p className="text-sm text-gray-400 mt-1">Clinton, Maryland</p>
+            <p className=" text-[18px] sm:text-lg text-gray-400 mt-1">Clinton, Maryland</p>
           </div>
         </div>
 

@@ -86,7 +86,7 @@ const MainSection = () => {
 
       {/* Featured Jobs */}
       <div className="mt-6 mb-20">
-        <h1 className="lg:text-2xl text-1xl font-normal flex sm:flex-row flex-col sm:items-center gap-1 sm:gap-4">
+        <h1 className="sm:text-2xl text-[22px] font-normal flex sm:flex-row flex-col sm:items-center gap-1 sm:gap-4">
           Featured Jobs{' '}
           <span className="text-[#0154AA] border-b-2 cursor-pointer  w-fit text-[14px] sm:text-[16px] lg:text-1xl">
             See Featured Jobs
@@ -126,9 +126,9 @@ const MainSection = () => {
 
       {/* Recommended Jobs */}
       <div className="mt-6">
-        <h2 className="lg:text-2xl text-1xl  font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
+        <h2 className="sm:text-2xl text-[22px]  font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
           Recommended Jobs{' '}
-          <span className="text-[#0154AA] cursor-pointer  border-b-2 w-fit text-[14px] sm:text-[16px] lg:text-1xl">
+          <span className="text-[#0154AA] cursor-pointer  border-b-2 w-fit text-[15px] sm:text-[17px] lg:text-1xl">
             See Recommended Jobs
           </span>
         </h2>
