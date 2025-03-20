@@ -37,16 +37,20 @@ const MainSection = () => {
           <input
             type="text"
             placeholder="Job Title, Company, or Keywords"
-            className="p-2 lg:py-3  w-full md:w-1/3 border-2 md:border-r-2 md:bg-inherit rounded-md  bg-white border-[#ccc] md:border-[#e9ecef]    focus:outline-blue-500"
+            className="p-2 lg:py-3  w-full md:w-1/3 border-2 md:rounded-none  rounded-md md:border-0 md:border-r-2 md:bg-inherit  bg-white border-[#ccc] md:border-[#e9ecef]    focus:outline-blue-500"
           />
-          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2 rounded-md  md:bg-inherit bg-white     w-full md:w-1/4">
-            <select className=" p-2 lg:py-3  w-full  focus:outline-blue-500 ">
-              <option>Select Location</option>
+          <div className="border-[#ccc] md:border-[#e9ecef]  md:rounded-none rounded-md  md:border-0 md:border-r-2 pr-2 border-2   md:bg-inherit bg-white     w-full md:w-1/4">
+            <select className=" p-2 lg:py-3  w-full text-gray-400 focus:outline-none   ">
+              <option defaultValue={''}>Select Location</option>
+              <option>Location 1</option>
+
             </select>
           </div>
-          <div className="border-[#ccc] md:border-[#e9ecef] border-2 md:border-r-2 pr-2  md:bg-inherit bg-white rounded-md      w-full md:w-1/4">
-            <select className=" p-2 lg:py-3 rounded w-full focus:outline-blue-500 ">
+          <div className="border-[#ccc] md:border-[#e9ecef] md:rounded-none rounded-md  md:border-0 md:border-r-2 pr-2 border-2  md:bg-inherit bg-white w-full md:w-1/4">
+            <select className=" p-2 lg:py-3 text-gray-400  rounded w-full focus:outline-none ">
               <option>Job Type</option>
+              <option>Job Type1</option>
+
             </select>
           </div>
           <button className="bg-[#0154AA] cursor-pointer text-white  px-6 py-2.5 md:py-2 rounded md:w-fit w-full flex md:justify-start justify-center items-center gap-2">
@@ -102,14 +106,14 @@ const MainSection = () => {
               </div>
 
               {/* Time + Applicants */}
-              <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
+              <div className="flex items-center flex-wrap gap-2 text-gray-500 text-sm mt-2">
+                <div className='flex items-center gap-2'>
                 <FaClock />
-                <span>
                   {featureItem?.postedTime} |
-                  <a href="#" className="text-[#0154AA] ml-2">
+                </div>
+                <p className="text-[#0154AA] ml-2">
                     {featureItem?.applicants} applicants
-                  </a>
-                </span>
+                  </p>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
                 <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
@@ -132,7 +136,7 @@ const MainSection = () => {
             See Recommended Jobs
           </span>
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  3xl:grid-cols-5  gap-4 mt-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4    gap-4 mt-4">
           {filteredRecommandedProduct.map((itemRecommanded, i) => (
             <div key={i} className="bg-white p-4 rounded-lg shadow-md">
               <h3 className="font-semibold">{itemRecommanded?.title}</h3>
@@ -142,12 +146,14 @@ const MainSection = () => {
               </div>
 
               {/* Time + Applicants */}
-              <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
+              <div className="flex items-center flex-wrap gap-2 text-gray-500 text-sm mt-2">
+                <div className='flex items-center gap-2'>
                 <FaClock />
-                {itemRecommanded?.postedTime} |
-                <a href="#" className="text-[#0154AA] ">
-                  {itemRecommanded?.applicants} applicants
-                </a>
+                  {itemRecommanded?.postedTime} |
+                </div>
+                <p className="text-[#0154AA] ml-2">
+                    {itemRecommanded?.applicants} applicants
+                  </p>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
                 <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
