@@ -33,11 +33,11 @@ const Sidebar = () => {
 
       {/* SideBar Content */}
       <div
-        className={` rounded-lg  w-1/4 
+        className={` rounded-lg  xl:w-1/4 lg:w-[30.33%] 
               lg:block fixed lg:relative top-0  left-0 h-[100vh] cursor-default    border-t-2 border-[#e9ecef] lg:border-t-0   lg:h-auto transition-transform 
               ${
                 sidebarOpen
-                  ? 'translate-x-0 mt-16 z-50 bg-gray-50     w-full sm:w-[55%] md:w-[50%] px-4 rounded-sm py-4 duration-700'
+                  ? 'translate-x-0 lg:mt-0 mt-16 lg:py-0 py-4 z-50 bg-gray-50     w-full sm:w-[55%] md:w-[50%] xl:w-1/4 lg:w-[30.33%]    px-4 rounded-sm duration-700'
                   : 'sm:-translate-x-full -translate-x-[180%] '
               } lg:translate-x-0 `}
       >
