@@ -10,6 +10,6 @@ body {
   font-weight: 500;
 }
 
-.sidebar::-webkit-scrollbar {
-  display: none; /* sidebar ke liyay scrollbar remobe kia */
+.removeScrollbar::-webkit-scrollbar {
+  display: none; /*   scrollbar remove ke liyay  */
 }

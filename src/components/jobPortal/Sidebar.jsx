@@ -41,7 +41,7 @@ const Sidebar = () => {
                   : 'sm:-translate-x-full -translate-x-[180%] '
               } lg:translate-x-0 `}
       >
-        <div className="lg:h-fit h-[75vh] sidebar  overflow-y-auto">
+        <div className="removeScrollbar lg:h-fit h-[75vh] overflow-y-auto">
           <div className="flex justify-end  items-cente  lg:hidden   mb-4 ">
             <button
               className="   text-[28px]  flex justify-end text-secondary hover:text-[red] px-2 py-1 rounded   "
@@ -90,13 +90,12 @@ const Sidebar = () => {
             {StatsOverview.map((item, i) => (
               <button
                 key={i}
-                className="flex justify-between lg:border-b-0 border-b-2 pb-2 border-[#E9ECEF] cursor-pointer w-full"
+                className="flex justify-between lg:border-b-0 border-b-2 py-2  hover:border-b-2 lg:border-[#ccc] border-[#E9ECEF] cursor-pointer w-full"
               >
                 <p>{item.title}</p> <p className="text-primary">{item.count}</p>
               </button>
             ))}
           </div>
-
           {/* Schedule  */}
           <div className="mt-6 lg:border-b-0 border-b-2 border-[#E9ECEF] lg:bg-white bg-gray-50 px-3 lg:rounded-md py-2">
             <div className="flex justify-between items-end ">

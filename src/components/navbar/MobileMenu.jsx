@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 export const MobileMenu = ({ setIsMenuOpen, navLink }) => {
   return (
-    <div className="fixed inset-0 top-16 z-50 flex justify-start">
+    <div className="fixed inset-0 top-16 xl:hidden  z-50 flex justify-start">
       {/* Overlay */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -19,7 +19,7 @@ export const MobileMenu = ({ setIsMenuOpen, navLink }) => {
         animate={{ y: 0 }}
         exit={{ y: '-100%' }}
         transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="w-full  h-fit bg-gray-50 border-t-2 border-b-2 pt-10 border-gray-200 shadow-lg rounded-b-lg space-y-6 py-6 px-6 relative z-50"
+        className="removeScrollbar w-full h-[50vh]  md:h-[45vh] overflow-y-auto  bg-gray-50 border-t-2 border-b-2 pt-10 border-gray-200 shadow-lg rounded-b-lg space-y-6 py-6 px-6 relative z-50"
       >
         {/* Navigation Links */}
         {navLink.map((item, idx) => (

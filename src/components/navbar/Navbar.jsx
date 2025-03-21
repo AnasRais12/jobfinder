@@ -72,10 +72,10 @@ export default function Navbar() {
               onClick={() => setSearchBar(true)}
               className="min-2xl:hidden min-xl:block sm:hidden block "
             >
-              <FiSearch className="sm:text-[30px] text-[28px] text-secondary hover:text-orange-600" />
+              <FiSearch className="sm:text-[30px] text-[28px] text-secondary " />
             </button>
 
-            <button className="bg-primary cursor-pointer sm:block hidden text-white px-4 w-fit py-2 rounded-md text-[16px]">
+            <button className="bg-primary hover:bg-[#0153aace]  cursor-pointer sm:block hidden text-white px-4 w-fit py-2 rounded-md text-[16px]">
               Resume Builder
             </button>
 

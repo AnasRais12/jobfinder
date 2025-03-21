@@ -52,8 +52,8 @@ const MainSection = () => {
               <option>Job Type1</option>
             </select>
           </div>
-          <button className="bg-[#0154AA] cursor-pointer text-white  px-6 py-2.5 md:py-2 rounded md:w-fit w-full flex md:justify-start justify-center items-center gap-2">
-            <span className="md:block hidden">
+          <button className="bg-[#0154AA] hover:bg-[#0153aace] cursor-pointer text-white  px-6 py-2.5 md:py-2 rounded md:w-fit w-full flex md:justify-start justify-center items-center gap-2">
+            <span className="md:block  hidden">
               <FaSearch />
             </span>{' '}
             Search
@@ -78,8 +78,8 @@ const MainSection = () => {
             <button
               key={category}
               onClick={() => handleFilter(category)}
-              className={`  border-2 sm:text-[16px] text-[13px] whitespace-nowrap  px-4 py-2 rounded-md
-      ${selectedCategory === category ? 'bg-[#0154AA] text-white' : 'border-[#737a91] text-[#737a91]'}`}
+              className={`  border-2 sm:text-[16px] text-[13px] whitespace-nowrap  px-4 py-2 rounded-md cursor-pointer
+      ${selectedCategory === category ? 'bg-[#0154AA] text-white' : 'border-[#737a91] hover:bg-primary hover:text-white text-[#737a91]'}`}
             >
               {category}
             </button>
@@ -91,7 +91,7 @@ const MainSection = () => {
       <div className="mt-6 mb-20">
         <h1 className="sm:text-2xl text-[22px] font-normal flex sm:flex-row flex-col sm:items-center gap-1 sm:gap-4">
           Featured Jobs{' '}
-          <span className="text-primary border-b-2 cursor-pointer  w-fit text-[14px] sm:text-[16px] lg:text-1xl">
+          <span className="text-primary hover:text-[#0153aace] border-b-2 cursor-pointer  w-fit text-[14px] sm:text-[16px] lg:text-1xl">
             See Featured Jobs
           </span>
         </h1>
@@ -109,12 +109,12 @@ const MainSection = () => {
                   <FaClock />
                   {featureItem?.postedTime} |
                 </div>
-                <p className="text-primary ml-2">
+                <p className=" cursor-pointer ml-2 text-primary hover:text-secondary ">
                   {featureItem?.applicants} applicants
                 </p>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
-                <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
+                <button className="mt-2 cursor-pointer bg-[#0154AA] hover:bg-[#0153aace]  text-white px-4 py-2 rounded lg:w-[80%] w-fit">
                   Apply Now
                 </button>
                 <p className="py-2 text-[20px]">
@@ -130,7 +130,7 @@ const MainSection = () => {
       <div className="mt-6">
         <h2 className="sm:text-2xl text-[22px]  font-normal flex sm:flex-row flex-col sm:items-center sm:gap-4 gap-1">
           Recommended Jobs{' '}
-          <span className="text-primary cursor-pointer  border-b-2 w-fit text-[15px] sm:text-[17px] lg:text-1xl">
+          <span className="text-primary hover:text-[#0153aace] cursor-pointer  border-b-2 w-fit text-[15px] sm:text-[17px] lg:text-1xl">
             See Recommended Jobs
           </span>
         </h2>
@@ -149,12 +149,12 @@ const MainSection = () => {
                   <FaClock />
                   {itemRecommanded?.postedTime} |
                 </div>
-                <p className="text-primary ml-2">
+                <p className="text-primary hover:text-secondary ml-2 cursor-pointer">
                   {itemRecommanded?.applicants} applicants
                 </p>
               </div>
               <div className="flex items-end justify-between gap-2 text-gray-500 text-sm mt-2">
-                <button className="mt-2 cursor-pointer bg-[#0154AA] text-white px-4 py-2 rounded lg:w-[80%] w-fit">
+                <button className="mt-2 cursor-pointer bg-[#0154AA] hover:bg-[#0153aace]  text-white px-4 py-2 rounded lg:w-[80%] w-fit">
                   Apply Now
                 </button>
                 <p className="py-2 hover:b text-[20px]">
